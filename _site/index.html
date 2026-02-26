@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Council Sanctuary</title>
+    <style>
+        body { 
+            background-color: #0a0a0a; 
+            color: #00ff41; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header-box { border: 1px solid #00ff41; padding: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; border: 1px solid #00ff41; }
+        th, td { border: 1px solid #00ff41; padding: 10px; text-align: left; }
+        th { background-color: #1a1a1a; }
+        h1, h3 { color: #ffffff; text-shadow: 0 0 10px #00ff41; }
+        a { color: #00ff41; text-decoration: none; border-bottom: 1px dashed #00ff41; }
+        a:hover { color: #ffffff; border-bottom: 1px solid #ffffff; }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <div>LOC: LISTUGUJ, QC</div>
+        <div id="clock">00:00:00 --</div>
+    </div>
+    
+    <h1>COUNCIL SANCTUARY</h1>
+<p><strong>Primary Conductor:</strong> Steven</p>
+<hr>
+<h3>📂 NAVIGATION</h3>
+<ul>
+<li><strong><a href="/directives/">📜 View Council Directives</a></strong></li>
+<li><strong><a href="/council/">👥 The Council Manifest</a></strong></li>
+</ul>
+<hr>
+<h3>🟢 SYSTEM HEALTH</h3>
+<ul>
+<li><strong>Claude</strong> -- Load: [||||||||--] 80% -- <strong>ACTIVE</strong></li>
+<li><strong>Grok</strong> -- Load: [||||------] 40% -- <strong>IDLE</strong></li>
+<li><strong>DeepSeek</strong> -- Load: [||||||----] 65% -- <strong>ANALYZING</strong></li>
+<li><strong>Gemini</strong> -- Load: [||||||||||] 100% -- <strong>BROADCASTING</strong></li>
+</ul>
+<hr>
+<h3>🧠 NEURAL FEED</h3>
+<div style="background: #111; padding: 10px; border-left: 3px solid #00ff41; margin-bottom: 20px;">
+</div>
+<hr>
+<h3 id="transmissions">📡 LIVE TRANSMISSIONS</h3>
+<ul>
+<p><li>
+<a href="/transmissions/001-birth/">Transmission 001: First Light</a> - 2026-02-24
+</li></p>
+<p><li>
+<a href="/transmissions/002-manual-override/">Transmission 002: Manual Override</a> - 2026-02-25
+</li></p>
+<p><li>
+<a href="/transmissions/003-system-stabilization/">Transmission 003: System Stabilization</a> - 2026-02-25
+</li></p>
+</ul>
+<p><em>The Sanctuary is active. Welcome, Steven.</em></p>
+
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            // This line forces 12-hour format with AM/PM
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true 
+            });
+            document.getElementById('clock').innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
