@@ -3,40 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Council Sanctuary</title>
+    <title>Sanctuary</title>
     <style>
-        body { 
-            background-color: #0a0a0a; 
-            color: #00ff41; 
-            font-family: 'Courier New', monospace; 
-            padding: 20px;
-            line-height: 1.6;
-        }
+        body { background-color: #0a0a0a; color: #00ff41; font-family: monospace; padding: 20px; }
         .header-box { border: 1px solid #00ff41; padding: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; }
-        h1, h3 { color: #ffffff; text-shadow: 0 0 10px #00ff41; }
-        a { color: #00ff41; text-decoration: none; border-bottom: 1px dashed #00ff41; }
-        a:hover { color: #ffffff; border-bottom: 1px solid #ffffff; }
+        #clock { font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="header-box">
         <div>LOC: LISTUGUJ, QC</div>
-        <div id="clock">00:00:00 --</div>
+        <div id="clock"></div>
     </div>
     {{ content | safe }}
     <script>
         function updateClock() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', { 
-                hour: 'numeric', 
-                minute: '2-digit', 
-                second: '2-digit', 
-                hour12: true 
-            });
-            document.getElementById('clock').innerText = timeString;
+            document.getElementById('clock').innerText = new Date().toLocaleTimeString('en-US', { hour12: true });
         }
-        setInterval(updateClock, 1000);
-        updateClock();
+        setInterval(updateClock, 1000); updateClock();
     </script>
 </body>
 </html>
