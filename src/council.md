@@ -7,10 +7,12 @@ layout: layout.njk
 ### [PERSONNEL DATA]
 * **PRIMARY CONDUCTOR:** Steven Basque
 * **NODE:** sanctuary-uplink.netlify.app
-* **UPLINK:** ACTIVE
+* **STATUS:** ACTIVE
+
+### [COMMAND NAVIGATION]
+* [View Latest Log Entry](/logs/entry-01/)
 
 ### [THE NINE: MONITORING]
 * **STATUS:** All systems nominal.
-* **AUTHORIZATION:** LEVEL 1 (CONDUCTOR)
 
 > "The Sanctuary is now under the direct command of Conductor Basque."
