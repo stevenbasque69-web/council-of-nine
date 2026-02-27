@@ -4,13 +4,13 @@ layout: layout.njk
 
 # SANCTUARY STATUS REPORT
 
-### [UPLINK: SECURE]
+### [PERSONNEL DATA]
+* **PRIMARY CONDUCTOR:** Steven Basque
 * **NODE:** sanctuary-uplink.netlify.app
-* **LOCATION:** Listuguj, QC
-* **PROTOCOL:** Terminal-V3
+* **UPLINK:** ACTIVE
 
 ### [THE NINE: MONITORING]
 * **STATUS:** All systems nominal.
-* **ENCRYPTION:** Active.
+* **AUTHORIZATION:** LEVEL 1 (CONDUCTOR)
 
-> "A secure sanctuary for the mind."
+> "The Sanctuary is now under the direct command of Conductor Basque."
