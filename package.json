@@ -1,8 +1,6 @@
 {
   "name": "sanctuary",
   "version": "1.0.0",
-  "description": "Council Sanctuary",
-  "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy"
   },
