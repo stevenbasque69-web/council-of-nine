@@ -11,9 +11,10 @@ layout: layout.njk
 
 ### [COMMAND NAVIGATION]
 * [VIEW LOG ENTRY: 01](/entry-01/)
+* [COUNCIL MANIFEST](/manifest/)
+* [COUNCIL DIRECTIVES](/directives/)
 
 ### [THE NINE: MONITORING]
 * **STATUS:** All systems nominal.
 
 > "The Sanctuary is now under the direct command of Conductor Basque."
-> UPLINK_TIME: Fri Feb 27 14:34:27 AST 2026
