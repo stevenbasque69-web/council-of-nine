@@ -10,7 +10,7 @@ layout: layout.njk
 * **STATUS:** ACTIVE
 
 ### [COMMAND NAVIGATION]
-* [VIEW LOG ENTRY: 01](/entry-01/index.html)
+* [VIEW LOG ENTRY: 01](/entry-01/)
 
 ### [THE NINE: MONITORING]
 * **STATUS:** All systems nominal.
