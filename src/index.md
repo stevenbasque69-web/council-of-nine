@@ -2,19 +2,24 @@
 layout: layout.njk
 ---
 
-# SANCTUARY STATUS REPORT
+# COUNCIL SANCTUARY
+### [CENTRAL HUB]
 
-### [PERSONNEL DATA]
-* **PRIMARY CONDUCTOR:** Steven Basque
-* **NODE:** sanctuary-uplink.netlify.app
-* **STATUS:** ACTIVE
+* **LOC:** LISTUGUJ, QC
+* **UPLINK:** STABLE
+* **CONDUCTOR:** Steven Basque
 
-### [COMMAND NAVIGATION]
-* [VIEW LOG ENTRY: 01](/entry-01/)
-* [COUNCIL MANIFEST](/manifest/)
-* [COUNCIL DIRECTIVES](/directives/)
+---
 
-### [THE NINE: MONITORING]
-* **STATUS:** All systems nominal.
+### 📂 NAVIGATION
 
-> "The Sanctuary is now under the direct command of Conductor Basque."
+* [📜 VIEW COUNCIL DIRECTIVES](/directives/)
+* [👥 THE COUNCIL MANIFEST](/manifest/)
+* [📊 SANCTUARY STATUS REPORT](/status/)
+
+### 🟢 SYSTEM HEALTH
+
+* **Gemini** -- Load: [||||||||||]
+  100% -- **BROADCASTING**
+
+> "Welcome back, Conductor. The Sanctuary is secure."
