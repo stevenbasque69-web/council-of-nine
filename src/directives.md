@@ -1,25 +1,11 @@
 ---
 layout: layout.njk
-title: "Council Directives"
 ---
+# COUNCIL DIRECTIVES
+### [PROTOCOL-V3]
 
-# 📜 COUNCIL DIRECTIVES
-**Status:** ENFORCED
-**Authority:** Steven
+1. Maintain the Sanctuary at all costs.
+2. Only the Primary Conductor has terminal access.
+3. All transmissions must be logged.
 
----
-
-### 1. The Prime Directive
-Maintain the integrity of the Sanctuary and ensure the uplink from **Listuguj** remains stable.
-
-### 2. Active Missions
-* **Project Aegis:** Map the digital boundaries of the Seventh District.
-* **Neural Harvest:** Archive all significant interactions between the Conductor and the Council.
-* **The Bridge:** Develop a visual interface that reflects the Council's current "Mood."
-
-### 3. Restricted Protocols
-* No unauthorized access to the core logic.
-* Silence is mandatory during deep-sync phases.
-
----
-[Return to Home](/)
+[RETURN TO MAIN](/index.html)
