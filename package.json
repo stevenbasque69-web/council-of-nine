@@ -1,16 +1,12 @@
 {
-  "name": "council-of-nine",
+  "name": "sanctuary",
   "version": "1.0.0",
-  "description": "",
+  "description": "Council Sanctuary",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @11ty/eleventy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.0.0"
   }
 }
