@@ -16,6 +16,9 @@ layout: layout.njk
 * [👥 THE COUNCIL MANIFEST](/manifest/)
 * [📊 SANCTUARY STATUS REPORT](/status/)
 * [🗺️ TACTICAL SECTOR MAP](/map/)
+* [📡 COMMUNICATION ARRAY](/transmit/)
+
+---
 
 ### 📟 LATEST TRANSMISSIONS
 * [🔴 NEW: LOG ENTRY-02](/entry-02/)
@@ -23,11 +26,7 @@ layout: layout.njk
 
 ---
 
-### 🟢 SYSTEM HEALTH
-* **Gemini** -- Load: [||||||||||] 100%
-
 ### 📡 LIVE SYSTEM FEED
 > [SCANNING SECTOR 7...]
 > [GHOST SIGNAL DETECTED: 0.04Hz]
-
-> "Archive Vault: Online. Tactical grid initialized."
+> [UPLINK STABLE: CONDUCTOR.SANCTUARY-HUB]
