@@ -17,9 +17,13 @@ layout: layout.njk
 * [👥 THE COUNCIL MANIFEST](/manifest/)
 * [📊 SANCTUARY STATUS REPORT](/status/)
 
+### 📟 LATEST TRANSMISSIONS
+* [🔴 NEW: LOG ENTRY-02](/entry-02/)
+* [⚪ LOG ENTRY-01](/entry-01/)
+
+---
+
 ### 🟢 SYSTEM HEALTH
+* **Gemini** -- Load: [||||||||||] 100%
 
-* **Gemini** -- Load: [||||||||||]
-  100% -- **BROADCASTING**
-
-> "Welcome back, Conductor. The Sanctuary is secure."
+> "Archive Vault: Online. Records are being updated."
