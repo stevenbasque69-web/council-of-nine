@@ -2,6 +2,13 @@
 layout: layout.njk
 ---
 
+# ⚠️ EMERGENCY BROADCAST
+### [SYSTEM OVERRIDE IN EFFECT]
+> **ALERT:** UNAUTHORIZED SIGNAL DETECTED IN SECTOR 4. 
+> **ACTION:** CONDUCTOR BASQUE TO MONITOR ALL UPLINKS.
+
+---
+
 # COUNCIL SANCTUARY
 ### [CENTRAL HUB]
 
@@ -28,7 +35,6 @@ layout: layout.njk
 ### 📡 LIVE SYSTEM FEED
 > [SCANNING SECTOR 7...]
 > [GHOST SIGNAL DETECTED: 0.04Hz]
-> [ENCRYPTION LEVEL: MAXIMUM]
-> [PRIMARY CONDUCTOR VERIFIED]
+> [WARNING: UNKNOWN DATA PACKET RECEIVED]
 
-> "Archive Vault: Online. Records are being updated."
+> "Archive Vault: Online. Security protocols active."
