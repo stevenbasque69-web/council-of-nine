@@ -28,7 +28,7 @@ layout: layout.njk
       
       // This is where we will point to your real AI Worker
       try {
-        const response = await fetch('/api/ai', {
+        const response = await fetch('https://council-ai-api.stevenbasque69.workers.dev', {
           method: 'POST',
           body: JSON.stringify({ prompt: val })
         });
