@@ -8,4 +8,5 @@ layout: layout.njk
 * **CON-02:** [ENCRYPTED]
 * **CON-03:** [ENCRYPTED]
 
-[RETURN TO MAIN](/index.html)
+---
+[⬅️ RETURN TO HUB](/)
