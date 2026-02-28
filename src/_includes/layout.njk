@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanctuary</title>
+    <title>{{ title }}</title>
     <style>
-        body { background-color: #0a0a0a; color: #00ff41; font-family: monospace; padding: 20px; }
-        .header-box { border: 1px solid #00ff41; padding: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; }
-        #clock { font-weight: bold; }
+        body {
+            background-color: #0a0a0a;
+            color: #00ff41;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        a { color: #008f11; text-decoration: none; border: 1px solid #008f11; padding: 2px 5px; }
+        a:hover { background: #008f11; color: #0a0a0a; }
+        .emergency-bar {
+            background: #440000;
+            color: #ff0000;
+            padding: 15px;
+            border: 2px solid #ff0000;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <div class="header-box">
-        <div>LOC: LISTUGUJ, QC</div>
-        <div id="clock"></div>
+    <div id="alert-box" class="emergency-bar">
+        ⚠️ EMERGENCY BROADCAST: UNAUTHORIZED SIGNAL DETECTED IN SECTOR 4.
     </div>
+
     {{ content | safe }}
+
     <script>
-        function updateClock() {
-            document.getElementById('clock').innerText = new Date().toLocaleTimeString('en-US', { hour12: true });
-        }
-        setInterval(updateClock, 1000); updateClock();
+        // After 60,000 milliseconds (1 minute), hide the alert box
+        setTimeout(function() {
+            document.getElementById('alert-box').classList.add('hidden');
+        }, 60000);
     </script>
 </body>
 </html>
