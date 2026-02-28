@@ -15,6 +15,7 @@ layout: layout.njk
 * [📜 VIEW COUNCIL DIRECTIVES](/directives/)
 * [👥 THE COUNCIL MANIFEST](/manifest/)
 * [📊 SANCTUARY STATUS REPORT](/status/)
+* [🗺️ TACTICAL SECTOR MAP](/map/)
 
 ### 📟 LATEST TRANSMISSIONS
 * [🔴 NEW: LOG ENTRY-02](/entry-02/)
@@ -29,4 +30,4 @@ layout: layout.njk
 > [SCANNING SECTOR 7...]
 > [GHOST SIGNAL DETECTED: 0.04Hz]
 
-> "Archive Vault: Online. Security protocols active."
+> "Archive Vault: Online. Tactical grid initialized."
