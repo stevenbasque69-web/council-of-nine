@@ -48,7 +48,7 @@ document.getElementById("send-btn").onclick = async () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt: cmd })
         });
-        const data = await res.json();
+        const reader = res.body.getReader(); let text = ""; while (true) { const { done, value } = await reader.read(); if (done) break; text += new TextDecoder().decode(value); out.lastChild.innerHTML = "[" + m.n + "]: " + text; }
 
         const members = [
             {n:"ARES-01", c:"#ff4444"}, {n:"ATHENA-02", c:"#4444ff"}, 
