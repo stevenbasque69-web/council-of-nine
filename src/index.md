@@ -60,3 +60,9 @@ document.getElementById("send-btn").onclick = async () => {
     out.scrollTop = out.scrollHeight;
 };
 </script>
+
+---
+
+### 📡 LIVE SYSTEM FEED (SUMMARY)
+* [SCANNING SECTOR 12...] | [GHOST SIGNAL MINIMIZED]
+*(/logs/)
