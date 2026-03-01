@@ -9,21 +9,21 @@
     overflow-x: hidden;
   }
   
-  /* 1. Sanctuary Hub - Restoring the Glow and Size */
+  /* 1. Sanctuary Hub - High Visibility Glow */
   .big-header { 
     font-size: 38px; font-weight: bold; margin-top: 25px;
     text-shadow: 0 0 20px #0f0; display: block; width: 100%;
     letter-spacing: 2px;
   }
   
-  /* 2. Time and status */
+  /* 2. Status Line */
   .status-line { 
     font-size: 13px; color: #fff; margin: 10px 0;
     border-bottom: 1px solid #0f0; display: inline-block; width: 90%;
     padding-bottom: 8px;
   }
   
-  /* 3. The Links - Full Screen Width */
+  /* 3. Navigation - Wide & Easy to Tap */
   .nav-container { display: block; width: 100%; padding: 0 5px; margin-bottom: 10px; }
   .nav-row { display: flex; gap: 4px; width: 100%; }
   .nav-row a { 
@@ -32,32 +32,31 @@
     background: rgba(0, 255, 0, 0.05); font-weight: bold;
   }
   
-  /* 4. The Terminal - FORCED EXPANSION */
+  /* 4. The Terminal - FIXED HIGH CAPACITY */
   #terminal-output { 
     background: #000; border: 2px solid #0f0;
-    min-height: 450px; /* Forces it to be large */
+    min-height: 450px; 
     width: 98vw; margin: 0 auto 10px auto;
     padding: 15px; overflow-y: auto; font-size: 14px;
     text-align: left; display: block;
-    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.2);
   }
   
-  /* Input Area */
+  /* Input Area - Anti-Zoom 16px Font */
   .input-container { display: flex; width: 98vw; margin: 0 auto 30px auto; gap: 5px; }
   input { 
     background: #000; border: 1px solid #0f0; color: #0f0; 
     flex-grow: 1; padding: 18px; font-family: monospace; 
     font-size: 16px; outline: none; border-radius: 0;
   }
-  button { background: #0f0; color: #000; border: none; padding: 0 25px; font-weight: bold; }
+  button { background: #0f0; color: #000; border: none; padding: 0 25px; font-weight: bold; cursor: pointer; }
 
-  .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; } .EXODUS { color: #0ff; }
+  .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; }
 </style>
 
 <div class="big-header">SANCTUARY HUB</div>
 
 <div class="status-line">
-  [ONLINE] | <span id="clock"></span> | [V.5.0 EXPANDED]
+  [ONLINE] | <span id="clock"></span> | [V.5.1 WALL OF 3]
 </div>
 
 <div class="nav-container">
@@ -69,8 +68,8 @@
 </div>
 
 <div id="terminal-output">
-  <div class="ARES">[ARES-01]: Tactical expansion initialized.</div>
-  <div class="EXODUS">[EXODUS-04]: Terminal height locked at 450px.</div>
+  <div class="ARES">[ARES-01]: Signal re-calibrated. Exodus-04 removed.</div>
+  <div class="ARES">[ARES-01]: Wall of 3 is back online. Wide-screen locked.</div>
 </div>
 
 <div class="input-container">
@@ -98,12 +97,14 @@
         body: JSON.stringify({ max_tokens: 35, prompt: "STRICT SHORT: " + input.value })
       });
       const data = await res.json();
-      const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}, {n:"EXODUS-04", c:"#0ff"}];
-      data.responses.slice(0, 4).forEach((r, i) => {
+      const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}];
+      
+      // Wall of 3 logic: only slice the first 3 responses
+      data.responses.slice(0, 3).forEach((r, i) => {
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
-      out.innerHTML += `<div style="color:red">[ERR]: Connection Timed Out.</div>`;
+      out.innerHTML += `<div style="color:red">[ERR]: Connection Lost.</div>`;
     }
     input.value = "";
     out.scrollTop = out.scrollHeight;
