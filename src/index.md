@@ -56,7 +56,7 @@ document.getElementById("send-btn").onclick = async () => {
             {n:"SELENE-07", c:"#c0c0c0"}, {n:"ORACLE-08", c:"#aa00ff"}, 
             {n:"VOID-09", c:"#555555"}
         ];
-        const selected = members.sort(() => 0.5 - Math.random()).slice(0, 3); selected.forEach((m, i) => { setTimeout(() => { out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "Syncing...") + "</div>"; }, i * 300); });
+        const selected = members.sort(() => 0.5 - Math.random()).slice(0, 3); selected.forEach((m, i) => { setTimeout(() => { setTimeout(() => { out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "Syncing...") + "</div>"; }, i * 500); });
 
         out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "No data received.") + "</div>";
     } catch(err) {
