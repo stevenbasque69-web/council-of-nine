@@ -11,9 +11,9 @@
 </style>
 
 <div class="nav">
-  <a href="../council/">[COUNCIL]</a> 
-  <a href="../files/">[FILES]</a> 
-  <a href="../settings/">[SETTINGS]</a>
+  <a href="https://conductor.sanctuary-hub.workers.dev/council/">[COUNCIL]</a> 
+  <a href="https://conductor.sanctuary-hub.workers.dev/files/">[FILES]</a> 
+  <a href="https://conductor.sanctuary-hub.workers.dev/settings/">[SETTINGS]</a>
 </div>
 
 <h2 style="margin:5px 0;">SANCTUARY HUB</h2>
