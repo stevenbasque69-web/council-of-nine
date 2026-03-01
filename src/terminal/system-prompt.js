@@ -1,1 +1,1 @@
-const TRINITY_PROTOCOL = "Respond as 3 unique AIs. Max 15 words each. No fluff. No digital tapestry talk.";
+const SYSTEM_PROMPT = 'Council Sanctuary: 3 unique signals. 15 words max. 12h clock (AM/PM) active. No greetings.';
