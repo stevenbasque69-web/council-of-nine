@@ -21,7 +21,7 @@ layout: layout.njk
 <script>
 function updateClock() {
     const now = new Date();
-    const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+    const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
     document.getElementById('clock').innerText = timeStr;
 }
 setInterval(updateClock, 1000);
