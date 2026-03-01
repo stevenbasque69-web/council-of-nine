@@ -4,39 +4,49 @@
 <style>
   body { 
     background: #000; color: #0f0; font-family: monospace; 
-    padding: 5px; margin: 0; 
+    padding: 0; margin: 0; 
     display: flex; flex-direction: column; align-items: center;
-    width: 100vw; overflow-x: hidden; /* Prevents side-scrolling */
+    width: 100vw; overflow-x: hidden;
   }
   
-  /* 1. Sanctuary Hub Bigger & Wide */
-  .big-header { font-size: 40px; font-weight: bold; margin-top: 10px; text-shadow: 0 0 10px #0f0; width: 100%; text-align: center; }
+  /* 1. Sanctuary Hub - Adjusted for Wide Fit */
+  .big-header { 
+    font-size: 34px; /* Slightly smaller to fit mobile width without cutoff */
+    font-weight: bold; margin-top: 15px; 
+    text-shadow: 0 0 10px #0f0; width: 100%; text-align: center; 
+    white-space: nowrap; 
+  }
   
   /* 2. Time and status */
-  .status-line { font-size: 14px; margin: 5px 0 15px 0; color: #fff; border-bottom: 1px solid #0f0; width: 95%; text-align: center; }
+  .status-line { font-size: 13px; margin: 5px 0 15px 0; color: #fff; width: 100%; text-align: center; }
   
-  /* 3. The Links - Full Width Row */
-  .nav-menu { display: flex; justify-content: center; gap: 5px; margin-bottom: 15px; width: 98%; }
-  .nav-menu a { color: #0f0; text-decoration: none; font-size: 12px; border: 1px solid #0f0; padding: 10px 0; flex: 1; text-align: center; }
+  /* 3. The Links - Full Edge-to-Edge */
+  .nav-menu { display: flex; width: 100%; justify-content: center; gap: 2px; margin-bottom: 10px; }
+  .nav-menu a { 
+    color: #0f0; text-decoration: none; font-size: 11px; 
+    border: 1px solid #0f0; padding: 12px 0; flex: 1; text-align: center; 
+    background: rgba(0, 255, 0, 0.05);
+  }
   
-  /* 4. The Wide Terminal - Locked to screen width */
+  /* 4. The Wide Terminal - 100% Edge */
   .terminal { 
-    background: #000; border: 2px solid #0f0; 
-    height: 350px; width: 98%; 
+    background: #000; border-top: 2px solid #0f0; border-bottom: 2px solid #0f0;
+    height: 400px; width: 100%; 
     padding: 10px; overflow-y: auto; 
     box-sizing: border-box; font-size: 14px;
   }
   
-  .input-area { display: flex; width: 98%; margin-top: 10px; gap: 5px; }
+  .input-area { display: flex; width: 100%; margin-top: 0; background: #000; }
   
-  /* 16px font size is the magic number to stop iOS/Android auto-zoom */
   input { 
-    background: #000; border: 1px solid #0f0; color: #0f0; 
-    flex-grow: 1; padding: 12px; font-family: monospace; 
-    font-size: 16px; border-radius: 0; outline: none;
+    background: #000; border: none; border-right: 1px solid #0f0; color: #0f0; 
+    flex-grow: 1; padding: 15px; font-family: monospace; 
+    font-size: 16px; outline: none; border-radius: 0;
   }
   
-  button { background: #0f0; color: #000; border: none; padding: 12px 15px; font-weight: bold; cursor: pointer; }
+  button { background: #0f0; color: #000; border: none; padding: 15px 25px; font-weight: bold; cursor: pointer; }
+  
+  .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; }
 </style>
 
 <div class="big-header">SANCTUARY HUB</div>
@@ -52,7 +62,7 @@
 </div>
 
 <div class="terminal" id="terminal-output">
-  <div style="color:#f44;">[ARES-01]: Shield active. Wide-screen width locked.</div>
+  <div class="ARES">[ARES-01]: Calibration complete. Interface locked to 100% width.</div>
 </div>
 
 <div class="input-area">
@@ -86,7 +96,7 @@
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
-      out.innerHTML += `<div style="color:red">[ERR]: Connection Interrupted.</div>`;
+      out.innerHTML += `<div style="color:red">[ERR]: Connection Lost.</div>`;
     }
     input.value = "";
     out.scrollTop = out.scrollHeight;
