@@ -1,5 +1,6 @@
 ---
 layout: layout.njk
+<div id="terminal-interface" style="background:#000; color:#0f0; padding:20px; border:1px solid #0f0; font-family:monospace; height:400px; overflow-y:auto;"><div id="output">[SYSTEM]: Main Hub Uplink Established...</div><div style="display:flex;"><span style="margin-right:10px;">></span><input type="text" id="command-input" style="background:transparent; color:#0f0; border:none; outline:none; flex:1;" autofocus></div></div>
 ---
 
 # 📟 MULTI-AI TERMINAL
@@ -45,3 +46,4 @@ layout: layout.njk
 
 ---
 [⬅️ RETURN TO HUB](/)
+<script>document.getElementById("command-input").addEventListener("keypress", async (e) => { if(e.key === "Enter") { const cmd = e.target.value; e.target.value = ""; const out = document.getElementById("output"); out.innerHTML += "<div>> " + cmd + "</div>"; try { const res = await fetch("https://council-ai-api.sanctuary-hub.workers.dev/api/", { method: "POST", body: JSON.stringify({ prompt: cmd }) }); const data = await res.json(); out.innerHTML += "<div style=\"color:cyan;\">[COUNCIL]: " + (data.response || "The connection is thin...") + "</div>"; } catch(err) { out.innerHTML += "<div style=\"color:red;\">[ERROR]: Signal Lost.</div>"; } out.scrollTop = out.scrollHeight; } });</script>
