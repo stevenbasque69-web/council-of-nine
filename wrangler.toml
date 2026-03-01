@@ -1,9 +1,0 @@
-name = "council-ai-api"
-main = "brain.js"
-compatibility_date = "2026-02-28"
-
-[assets]
-directory = "./src"
-binding = "ASSETS"
-run_worker_first = true
-
