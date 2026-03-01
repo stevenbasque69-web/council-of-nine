@@ -5,8 +5,7 @@ layout: layout.njk
 ### [STATUS: CONNECTED TO CLOUDFLARE AI GATEWAY]
 
 ## COUNCIL SANCTUARY
-### [CENTRAL HUB]
-* **LOC:** LISTUGUJ, QC | **CONDUCTOR:** Steven Basque
+### [CENTRAL HUB] | [CONDUCTOR: Steven Basque]
 * **SYSTEM TIME:** <span id="clock">00:00:00</span>
 
 ---
@@ -18,7 +17,7 @@ layout: layout.njk
 ---
 
 <div id="terminal-interface" style="background:#000; color:#0f0; padding:20px; border:2px solid #0f0; font-family:monospace; height:450px; overflow-y:auto;">
-    <div id="output">[SYSTEM]: Multi-Entity Uplink Established. Standing by...</div>
+    <div id="output">[SYSTEM]: Multi-Entity Uplink Re-Established. Standing by...</div>
     <div style="display:flex; margin-top:10px;">
         <span style="margin-right:10px;">></span>
         <input type="text" id="command-input" style="background:transparent; color:#0f0; border:none; outline:none; flex:1;" autofocus>
@@ -48,7 +47,7 @@ document.getElementById("send-btn").onclick = async () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt: cmd })
         });
-        const reader = res.body.getReader(); let text = ""; while (true) { const { done, value } = await reader.read(); if (done) break; text += new TextDecoder().decode(value); out.lastChild.innerHTML = "[" + m.n + "]: " + text; }
+        const data = await res.json();
 
         const members = [
             {n:"ARES-01", c:"#ff4444"}, {n:"ATHENA-02", c:"#4444ff"}, 
@@ -59,17 +58,11 @@ document.getElementById("send-btn").onclick = async () => {
         ];
         const m = members[Math.floor(Math.random()*members.length)];
 
-        out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "Uplink thin...") + "</div>";
+        out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "No data received.") + "</div>";
     } catch(err) {
-        out.innerHTML += "<div style='color:red;'>[ERROR]: Connection Reset. Please retry.</div>";
+        out.innerHTML += "<div style='color:red;'>[ERROR]: Uplink Interrupted. Re-syncing...</div>";
     }
     out.scrollTop = out.scrollHeight;
 };
-const feed = document.createElement("div"); 
-feed.style = "font-size:10px; color:#0f0; margin-top:10px; opacity:0.7;"; 
-document.body.appendChild(feed); 
-setInterval(() => { 
-    const stats = ["[SCANNING SECTOR 12...]", "[UPLINK 99%]", "[PACKET RECEIVED]", "[LATENCY 24ms]"]; 
-    feed.innerText = stats[Math.floor(Math.random()*stats.length)]; 
-}, 3000);
 </script>
+<div style="font-size:10px; color:#0f0; margin-top:10px; opacity:0.7;" id="pulse">[UPLINK 99%]</div>
