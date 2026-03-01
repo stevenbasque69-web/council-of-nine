@@ -2,67 +2,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <style>
+  * { box-sizing: border-box; }
   body { 
     background: #000; color: #0f0; font-family: monospace; 
-    padding: 0; margin: 0; 
-    display: flex; flex-direction: column; align-items: center;
-    width: 100vw; overflow-x: hidden;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; 
+    width: 100vw; height: 100vh; overflow-x: hidden;
   }
   
-  /* 1. Sanctuary Hub - Adjusted for Wide Fit */
-  .big-header { 
-    font-size: 34px; /* Slightly smaller to fit mobile width without cutoff */
-    font-weight: bold; margin-top: 15px; 
-    text-shadow: 0 0 10px #0f0; width: 100%; text-align: center; 
-    white-space: nowrap; 
-  }
+  /* 1. Sanctuary Hub Header */
+  header { width: 100%; text-align: center; padding: 10px 0; }
+  .big-header { font-size: 32px; font-weight: bold; text-shadow: 0 0 10px #0f0; margin-bottom: 5px; }
+  .status-line { font-size: 12px; color: #fff; border-bottom: 1px solid #0f0; padding-bottom: 5px; margin: 0 10px; }
   
-  /* 2. Time and status */
-  .status-line { font-size: 13px; margin: 5px 0 15px 0; color: #fff; width: 100%; text-align: center; }
-  
-  /* 3. The Links - Full Edge-to-Edge */
-  .nav-menu { display: flex; width: 100%; justify-content: center; gap: 2px; margin-bottom: 10px; }
-  .nav-menu a { 
+  /* 2. Navigation Links */
+  nav { display: flex; width: 100%; gap: 2px; padding: 5px; }
+  nav a { 
     color: #0f0; text-decoration: none; font-size: 11px; 
     border: 1px solid #0f0; padding: 12px 0; flex: 1; text-align: center; 
-    background: rgba(0, 255, 0, 0.05);
   }
   
-  /* 4. The Wide Terminal - 100% Edge */
-  .terminal { 
-    background: #000; border-top: 2px solid #0f0; border-bottom: 2px solid #0f0;
-    height: 400px; width: 100%; 
-    padding: 10px; overflow-y: auto; 
-    box-sizing: border-box; font-size: 14px;
+  /* 3. The Wide Terminal Box */
+  #terminal-output { 
+    background: #000; border: 2px solid #0f0;
+    flex-grow: 1; /* This makes it fill the screen height */
+    width: 96%; margin: 5px auto;
+    padding: 10px; overflow-y: auto; font-size: 14px;
   }
   
-  .input-area { display: flex; width: 100%; margin-top: 0; background: #000; }
-  
+  /* 4. Chat Input Bar */
+  .input-area { display: flex; width: 100%; padding: 5px; background: #000; gap: 5px; }
   input { 
-    background: #000; border: none; border-right: 1px solid #0f0; color: #0f0; 
+    background: #000; border: 1px solid #0f0; color: #0f0; 
     flex-grow: 1; padding: 15px; font-family: monospace; 
     font-size: 16px; outline: none; border-radius: 0;
   }
-  
-  button { background: #0f0; color: #000; border: none; padding: 15px 25px; font-weight: bold; cursor: pointer; }
-  
+  button { background: #0f0; color: #000; border: none; padding: 15px 20px; font-weight: bold; cursor: pointer; }
+
   .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; }
 </style>
 
-<div class="big-header">SANCTUARY HUB</div>
+<header>
+  <div class="big-header">SANCTUARY HUB</div>
+  <div class="status-line">[ONLINE] | <span id="clock"></span> | [V.3 STABLE]</div>
+</header>
 
-<div class="status-line">
-  [ONLINE] | <span id="clock"></span> | [V.3 STABLE]
-</div>
-
-<div class="nav-menu">
+<nav>
   <a href="/council/">COUNCIL</a>
   <a href="/files/">FILES</a>
   <a href="/settings/">SETTINGS</a>
-</div>
+</nav>
 
-<div class="terminal" id="terminal-output">
-  <div class="ARES">[ARES-01]: Calibration complete. Interface locked to 100% width.</div>
+<div id="terminal-output">
+  <div class="ARES">[ARES-01]: System Overlap Detected. Repairing Logic Gates...</div>
+  <div class="ARES">[ARES-01]: Interface Stabilized. Wide-Screen Active.</div>
 </div>
 
 <div class="input-area">
@@ -96,7 +89,7 @@
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
-      out.innerHTML += `<div style="color:red">[ERR]: Connection Lost.</div>`;
+      out.innerHTML += `<div style="color:red">[ERR]: Uplink Error.</div>`;
     }
     input.value = "";
     out.scrollTop = out.scrollHeight;
