@@ -65,4 +65,11 @@ document.getElementById("send-btn").onclick = async () => {
     }
     out.scrollTop = out.scrollHeight;
 };
+const feed = document.createElement("div"); 
+feed.style = "font-size:10px; color:#0f0; margin-top:10px; opacity:0.7;"; 
+document.body.appendChild(feed); 
+setInterval(() => { 
+    const stats = ["[SCANNING SECTOR 12...]", "[UPLINK 99%]", "[PACKET RECEIVED]", "[LATENCY 24ms]"]; 
+    feed.innerText = stats[Math.floor(Math.random()*stats.length)]; 
+}, 3000);
 </script>
