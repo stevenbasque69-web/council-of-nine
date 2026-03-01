@@ -45,7 +45,7 @@ document.getElementById("send-btn").onclick = async () => {
         const res = await fetch("https://council-ai-api.sanctuary-hub.workers.dev/api/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt: cmd })
+            body: JSON.stringify({ prompt: "ANSWER IN 10 WORDS OR LESS: " + cmd })
         });
         const data = await res.json();
 
