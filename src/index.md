@@ -11,9 +11,9 @@
 </style>
 
 <div class="nav">
-  <a href="council.html">[COUNCIL]</a> 
-  <a href="files.html">[FILES]</a> 
-  <a href="settings.html">[SETTINGS]</a>
+  <a href="../council/">[COUNCIL]</a> 
+  <a href="../files/">[FILES]</a> 
+  <a href="../settings/">[SETTINGS]</a>
 </div>
 
 <h2 style="margin:5px 0;">SANCTUARY HUB</h2>
