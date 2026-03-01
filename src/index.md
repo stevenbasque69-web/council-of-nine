@@ -53,7 +53,7 @@ document.getElementById("send-btn").onclick = async () => {
             body: JSON.stringify({ prompt: cmd })
         });
         const data = await res.json();
-        out.innerHTML += "<div style='color:cyan;'>[COUNCIL]: " + (data.response || "Uplink thin...") + "</div>";
+        out.innerHTML += "<div style='color:cyan;'>[" + m.n + "]: " + (data.response || "Uplink thin...") + "</div>";
     } catch(err) {
         out.innerHTML += "<div style='color:red;'>[ERROR]: Transmission Failed.</div>";
     }
