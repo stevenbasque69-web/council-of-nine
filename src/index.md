@@ -6,23 +6,19 @@ layout: layout.njk
 
 ## COUNCIL SANCTUARY
 ### [CENTRAL HUB]
-* **LOC:** LISTUGUJ, QC
-* **UPLINK:** STABLE
-* **CONDUCTOR:** Steven Basque
+* **LOC:** LISTUGUJ, QC | **CONDUCTOR:** Steven Basque
 * **SYSTEM TIME:** <span id="clock">00:00:00</span>
 
 ---
 
 ### 📂 NAVIGATION
-* [📜 VIEW COUNCIL DIRECTIVES](/directives/)
-* [👥 THE COUNCIL MANIFEST](/manifest/)
-* [📊 SANCTUARY STATUS REPORT](/status/)
-* [🗺️ TACTICAL SECTOR MAP](/map/)
+* [📜 VIEW COUNCIL DIRECTIVES](/directives/) | [👥 THE COUNCIL MANIFEST](/manifest/)
+* [📊 SANCTUARY STATUS REPORT](/status/) | [🗺️ TACTICAL SECTOR MAP](/map/)
 
 ---
 
 <div id="terminal-interface" style="background:#000; color:#0f0; padding:20px; border:2px solid #0f0; font-family:monospace; height:450px; overflow-y:auto;">
-    <div id="output">[SYSTEM]: Main Hub Uplink Established. Welcome, Conductor.</div>
+    <div id="output">[SYSTEM]: Multi-Entity Uplink Established. Standing by...</div>
     <div style="display:flex; margin-top:10px;">
         <span style="margin-right:10px;">></span>
         <input type="text" id="command-input" style="background:transparent; color:#0f0; border:none; outline:none; flex:1;" autofocus>
@@ -31,15 +27,13 @@ layout: layout.njk
 </div>
 
 <script>
-// THE CLOCK PROTOCOL
 function updateClock() {
     const now = new Date();
-    document.getElementById('clock').innerText = now.toLocaleTimeString();
+    document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false });
 }
 setInterval(updateClock, 1000);
 updateClock();
 
-// THE TERMINAL PROTOCOL
 document.getElementById("send-btn").onclick = async () => {
     const input = document.getElementById("command-input");
     const cmd = input.value;
@@ -47,22 +41,28 @@ document.getElementById("send-btn").onclick = async () => {
     input.value = "";
     const out = document.getElementById("output");
     out.innerHTML += "<div>> " + cmd + "</div>";
+
     try {
         const res = await fetch("https://council-ai-api.sanctuary-hub.workers.dev/api/", {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt: cmd })
         });
         const data = await res.json();
-        out.innerHTML += "<div style='color:cyan;'>[" + m.n + "]: " + (data.response || "Uplink thin...") + "</div>";
+
+        const members = [
+            {n:"ARES-01", c:"#ff4444"}, {n:"ATHENA-02", c:"#4444ff"}, 
+            {n:"HERMES-03", c:"#ffd700"}, {n:"GAIA-04", c:"#44ff44"}, 
+            {n:"CHRONOS-05", c:"#ffffff"}, {n:"TITAN-06", c:"#ff8800"}, 
+            {n:"SELENE-07", c:"#c0c0c0"}, {n:"ORACLE-08", c:"#aa00ff"}, 
+            {n:"VOID-09", c:"#555555"}
+        ];
+        const m = members[Math.floor(Math.random()*members.length)];
+
+        out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "Uplink thin...") + "</div>";
     } catch(err) {
-        out.innerHTML += "<div style='color:red;'>[ERROR]: Transmission Failed.</div>";
+        out.innerHTML += "<div style='color:red;'>[ERROR]: Connection Reset. Please retry.</div>";
     }
     out.scrollTop = out.scrollHeight;
 };
 </script>
-
----
-
-### 📡 LIVE SYSTEM FEED (SUMMARY)
-* [SCANNING SECTOR 12...] | [GHOST SIGNAL MINIMIZED]
-*(/logs/)
