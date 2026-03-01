@@ -39,7 +39,7 @@ document.getElementById("send-btn").onclick = async () => {
         const res = await fetch("https://council-ai-api.sanctuary-hub.workers.dev/api/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ max_tokens: 40,  prompt: "STRICT SHORT: " + cmd })
+            body: JSON.stringify({ max_tokens: 35,  max_tokens: 40,  prompt: "STRICT SHORT: " + cmd })
         });
         const data = await res.json();
         const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}];
