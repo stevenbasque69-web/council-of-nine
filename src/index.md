@@ -46,7 +46,7 @@ document.getElementById("send-btn").onclick = async () => {
             body: JSON.stringify({ max_tokens: 35,  max_tokens: 35,  prompt: "STRICT SHORT: " + cmd })
         });
         const data = await res.json();
-        const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}, {n:"VANGUARD-09", c:"#0fa"}];
+        const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}];
 
         members.forEach((m, i) => {
             setTimeout(() => {
