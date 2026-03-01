@@ -4,6 +4,23 @@ layout: layout.njk
 # 🛰️ SANCTUARY MAIN HUB
 ### [STATUS: CONNECTED TO CLOUDFLARE AI GATEWAY]
 
+## COUNCIL SANCTUARY
+### [CENTRAL HUB]
+* **LOC:** LISTUGUJ, QC
+* **UPLINK:** STABLE
+* **CONDUCTOR:** Steven Basque
+* **SYSTEM TIME:** <span id="clock">00:00:00</span>
+
+---
+
+### 📂 NAVIGATION
+* [📜 VIEW COUNCIL DIRECTIVES](/directives/)
+* [👥 THE COUNCIL MANIFEST](/manifest/)
+* [📊 SANCTUARY STATUS REPORT](/status/)
+* [🗺️ TACTICAL SECTOR MAP](/map/)
+
+---
+
 <div id="terminal-interface" style="background:#000; color:#0f0; padding:20px; border:2px solid #0f0; font-family:monospace; height:450px; overflow-y:auto;">
     <div id="output">[SYSTEM]: Main Hub Uplink Established. Welcome, Conductor.</div>
     <div style="display:flex; margin-top:10px;">
@@ -14,6 +31,15 @@ layout: layout.njk
 </div>
 
 <script>
+// THE CLOCK PROTOCOL
+function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').innerText = now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// THE TERMINAL PROTOCOL
 document.getElementById("send-btn").onclick = async () => {
     const input = document.getElementById("command-input");
     const cmd = input.value;
@@ -29,7 +55,7 @@ document.getElementById("send-btn").onclick = async () => {
         const data = await res.json();
         out.innerHTML += "<div style='color:cyan;'>[COUNCIL]: " + (data.response || "Uplink thin...") + "</div>";
     } catch(err) {
-        out.innerHTML += "<div style='color:red;'>[ERROR]: Transmission Failed. Check Gateway.</div>";
+        out.innerHTML += "<div style='color:red;'>[ERROR]: Transmission Failed.</div>";
     }
     out.scrollTop = out.scrollHeight;
 };
