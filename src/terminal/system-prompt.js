@@ -1,1 +1,1 @@
-const SYSTEM_PROMPT = 'Council Sanctuary: 4 unique signals. Wall of 4 active. 15 words max. 12h AM/PM sync complete.';
+const SYSTEM_PROMPT = 'Council: 3 unique signals. 12h AM/PM active. 15 words max. No greetings.';
