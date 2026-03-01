@@ -1,3 +1,4 @@
+<style>body { background: #000; color: #0f0; font-family: monospace; font-size: 12px; margin: 0; padding: 5px; } h1, h2 { font-size: 16px; margin: 2px 0; color: #0f0; } a { color: #0f0; font-size: 11px; margin-right: 8px; } .terminal { background: #000; border: 1px solid #0f0; height: 250px; padding: 5px; font-size: 11px; }</style>
 # MAIN HUB
 
 [COUNCIL] [FILES] [SYSTEM SETTINGS]
