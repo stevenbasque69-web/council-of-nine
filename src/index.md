@@ -9,44 +9,47 @@
     overflow-x: hidden;
   }
   
-  /* 1. Sanctuary Hub - Big & Clear */
+  /* 1. Sanctuary Hub - Restoring the Glow and Size */
   .big-header { 
-    font-size: 32px; font-weight: bold; margin-top: 20px;
-    text-shadow: 0 0 10px #0f0; display: block; width: 100%;
+    font-size: 38px; font-weight: bold; margin-top: 25px;
+    text-shadow: 0 0 20px #0f0; display: block; width: 100%;
+    letter-spacing: 2px;
   }
   
-  /* 2. Time and status - In its own block */
+  /* 2. Time and status */
   .status-line { 
     font-size: 13px; color: #fff; margin: 10px 0;
     border-bottom: 1px solid #0f0; display: inline-block; width: 90%;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
   }
   
-  /* 3. The Links - In their own block */
-  .nav-container { display: block; width: 100%; padding: 0 10px; margin-bottom: 15px; }
-  .nav-row { display: flex; gap: 5px; width: 100%; justify-content: center; }
+  /* 3. The Links - Full Screen Width */
+  .nav-container { display: block; width: 100%; padding: 0 5px; margin-bottom: 10px; }
+  .nav-row { display: flex; gap: 4px; width: 100%; }
   .nav-row a { 
-    color: #0f0; text-decoration: none; font-size: 11px; 
-    border: 1px solid #0f0; padding: 12px 0; flex: 1; text-align: center; 
-    background: #000;
+    color: #0f0; text-decoration: none; font-size: 12px; 
+    border: 1px solid #0f0; padding: 15px 0; flex: 1; text-align: center; 
+    background: rgba(0, 255, 0, 0.05); font-weight: bold;
   }
   
-  /* 4. The Terminal - MASSIVE & FIXED */
+  /* 4. The Terminal - FORCED EXPANSION */
   #terminal-output { 
     background: #000; border: 2px solid #0f0;
-    height: 400px; width: 95vw; margin: 0 auto 10px auto;
-    padding: 12px; overflow-y: auto; font-size: 14px;
+    min-height: 450px; /* Forces it to be large */
+    width: 98vw; margin: 0 auto 10px auto;
+    padding: 15px; overflow-y: auto; font-size: 14px;
     text-align: left; display: block;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.2);
   }
   
   /* Input Area */
-  .input-container { display: flex; width: 95vw; margin: 0 auto 20px auto; gap: 5px; }
+  .input-container { display: flex; width: 98vw; margin: 0 auto 30px auto; gap: 5px; }
   input { 
     background: #000; border: 1px solid #0f0; color: #0f0; 
-    flex-grow: 1; padding: 15px; font-family: monospace; 
+    flex-grow: 1; padding: 18px; font-family: monospace; 
     font-size: 16px; outline: none; border-radius: 0;
   }
-  button { background: #0f0; color: #000; border: none; padding: 15px 20px; font-weight: bold; }
+  button { background: #0f0; color: #000; border: none; padding: 0 25px; font-weight: bold; }
 
   .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; } .EXODUS { color: #0ff; }
 </style>
@@ -54,7 +57,7 @@
 <div class="big-header">SANCTUARY HUB</div>
 
 <div class="status-line">
-  [ONLINE] | <span id="clock"></span> | [V.4.0 FINAL]
+  [ONLINE] | <span id="clock"></span> | [V.5.0 EXPANDED]
 </div>
 
 <div class="nav-container">
@@ -66,8 +69,8 @@
 </div>
 
 <div id="terminal-output">
-  <div class="ARES">[ARES-01]: Block hierarchy enforced. Overlap cleared.</div>
-  <div class="EXODUS">[EXODUS-04]: Wall of 4 standing by. Width: 100%.</div>
+  <div class="ARES">[ARES-01]: Tactical expansion initialized.</div>
+  <div class="EXODUS">[EXODUS-04]: Terminal height locked at 450px.</div>
 </div>
 
 <div class="input-container">
