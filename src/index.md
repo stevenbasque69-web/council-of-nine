@@ -14,7 +14,7 @@
   .nav-menu a:hover { background: #0f0; color: #000; }
   
   /* 4. Then the chat box */
-  .terminal { background: #000; border: 2px solid #0f0; height: 350px; width: 100%; padding: 15px; overflow-y: auto; text-align: left; box-sizing: border-box; }
+  .terminal { background: #000; border: 2px solid #0f0; height: 450px; width: 100%; padding: 15px; overflow-y: auto; text-align: left; box-sizing: border-box; }
   .input-area { display: flex; width: 100%; margin-top: 10px; gap: 5px; }
   input { background: #000; border: 1px solid #0f0; color: #0f0; flex-grow: 1; padding: 15px; font-family: monospace; font-size: 16px; }
   button { background: #0f0; color: #000; border: none; padding: 15px 25px; font-weight: bold; cursor: pointer; }
@@ -28,9 +28,9 @@
   </div>
 
   <div class="nav-menu">
-    <a href="https://conductor.sanctuary-hub.workers.dev/council/">COUNCIL</a>
-    <a href="https://conductor.sanctuary-hub.workers.dev/files/">FILES</a>
-    <a href="https://conductor.sanctuary-hub.workers.dev/settings/">SETTINGS</a>
+    <a href="/council">COUNCIL</a>
+    <a href="/files">FILES</a>
+    <a href="/settings">SETTINGS</a>
   </div>
 
   <div class="terminal" id="terminal-output">
