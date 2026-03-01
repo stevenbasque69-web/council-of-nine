@@ -1,21 +1,42 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
 <style>
-  body { background: #000; color: #0f0; font-family: monospace; padding: 10px; margin: 0; display: flex; flex-direction: column; align-items: center; }
+  body { 
+    background: #000; color: #0f0; font-family: monospace; 
+    padding: 5px; margin: 0; 
+    display: flex; flex-direction: column; align-items: center;
+    width: 100vw; overflow-x: hidden; /* Prevents side-scrolling */
+  }
   
-  /* 1. Sanctuary Hub Bigger & Wider */
-  .big-header { font-size: 48px; font-weight: bold; margin-top: 10px; text-shadow: 0 0 15px #0f0; width: 100%; text-align: center; }
+  /* 1. Sanctuary Hub Bigger & Wide */
+  .big-header { font-size: 40px; font-weight: bold; margin-top: 10px; text-shadow: 0 0 10px #0f0; width: 100%; text-align: center; }
   
-  /* 2. Time and stuff */
-  .status-line { font-size: 14px; margin: 5px 0 15px 0; color: #fff; border-bottom: 1px solid #0f0; width: 95%; text-align: center; padding-bottom: 5px; }
+  /* 2. Time and status */
+  .status-line { font-size: 14px; margin: 5px 0 15px 0; color: #fff; border-bottom: 1px solid #0f0; width: 95%; text-align: center; }
   
-  /* 3. The links */
-  .nav-menu { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; width: 100%; }
-  .nav-menu a { color: #0f0; text-decoration: none; font-size: 14px; border: 1px solid #0f0; padding: 5px 10px; flex: 1; max-width: 120px; text-align: center; }
+  /* 3. The Links - Full Width Row */
+  .nav-menu { display: flex; justify-content: center; gap: 5px; margin-bottom: 15px; width: 98%; }
+  .nav-menu a { color: #0f0; text-decoration: none; font-size: 12px; border: 1px solid #0f0; padding: 10px 0; flex: 1; text-align: center; }
   
-  /* 4. The WIDE chat box */
-  .terminal { background: #000; border: 2px solid #0f0; height: 400px; width: 98vw; padding: 10px; overflow-y: auto; text-align: left; box-sizing: border-box; }
-  .input-area { display: flex; width: 98vw; margin-top: 10px; gap: 5px; }
-  input { background: #000; border: 1px solid #0f0; color: #0f0; flex-grow: 1; padding: 12px; font-family: monospace; font-size: 16px; }
-  button { background: #0f0; color: #000; border: none; padding: 12px 20px; font-weight: bold; cursor: pointer; }
+  /* 4. The Wide Terminal - Locked to screen width */
+  .terminal { 
+    background: #000; border: 2px solid #0f0; 
+    height: 350px; width: 98%; 
+    padding: 10px; overflow-y: auto; 
+    box-sizing: border-box; font-size: 14px;
+  }
+  
+  .input-area { display: flex; width: 98%; margin-top: 10px; gap: 5px; }
+  
+  /* 16px font size is the magic number to stop iOS/Android auto-zoom */
+  input { 
+    background: #000; border: 1px solid #0f0; color: #0f0; 
+    flex-grow: 1; padding: 12px; font-family: monospace; 
+    font-size: 16px; border-radius: 0; outline: none;
+  }
+  
+  button { background: #0f0; color: #000; border: none; padding: 12px 15px; font-weight: bold; cursor: pointer; }
 </style>
 
 <div class="big-header">SANCTUARY HUB</div>
@@ -31,11 +52,11 @@
 </div>
 
 <div class="terminal" id="terminal-output">
-  <div style="color:#f44;">[ARES-01]: System wide-screen expansion complete.</div>
+  <div style="color:#f44;">[ARES-01]: Shield active. Wide-screen width locked.</div>
 </div>
 
 <div class="input-area">
-  <input type="text" id="user-input" placeholder="Execute..." autocomplete="off">
+  <input type="text" id="user-input" placeholder="Execute Command..." autocomplete="off">
   <button onclick="sendCommand()">SEND</button>
 </div>
 
@@ -65,7 +86,7 @@
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
-      out.innerHTML += `<div style="color:red">[ERR]: Connection Lost.</div>`;
+      out.innerHTML += `<div style="color:red">[ERR]: Connection Interrupted.</div>`;
     }
     input.value = "";
     out.scrollTop = out.scrollHeight;
