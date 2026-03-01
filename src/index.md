@@ -48,7 +48,7 @@ document.getElementById("send-btn").onclick = async () => {
             setTimeout(() => {
                 out.innerHTML += "<div style='color:" + m.c + ";'>[" + m.n + "]: " + (data.response || "Data link clear.") + "</div>";
                 out.scrollTop = out.scrollHeight;
-            }, i * 800);
+            }, i * 500);
         });
     } catch(e) {
         out.innerHTML += "<div style='color:red;'>[ERROR]: Connection Failed.</div>";
