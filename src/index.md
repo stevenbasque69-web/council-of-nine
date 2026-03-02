@@ -1,30 +1,29 @@
 <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
-<body style="background:#000; color:#0f0; font-family:sans-serif; margin:0; padding:0; overflow:hidden; position:fixed; width:100vw; height:100vh;">
+<body style="background:#000; color:#0f0; font-family:monospace; margin:0; padding:0; width:100vw; height:100vh; overflow:hidden; position:fixed;">
 
-  <div id="side-menu" style="position:fixed; top:0; left:-300px; width:300px; height:100%; background:#111; border-right:1px solid #333; transition:0.3s; z-index:100; display:flex; flex-direction:column;">
-    <div style="padding:30px 20px 10px;">
-      <div style="background:#222; border-radius:25px; padding:10px; color:#888; font-size:14px;">🔍 Search for chats</div>
-    </div>
-    <div style="padding:10px 20px;">
-      <div style="background:#222; border-radius:10px; padding:15px; color:#fff;">➕ New chat</div>
-    </div>
-    <div style="flex-grow:1; padding:20px; color:#888; font-size:12px; font-weight:bold; text-transform:uppercase;">Recent Chats</div>
-    <div style="padding:15px 20px; border-top:1px solid #222; color:#fff;">⚙️ Settings</div>
+  <div id="side-menu" style="position:fixed; top:0; left:-300px; width:300px; height:100%; background:#080808; border-right:1px solid #0f0; transition:0.3s; z-index:100; padding-top:20px;">
+    <div style="padding:20px; color:#0f0; border-bottom:1px solid #030; font-weight:bold;">SANCTUARY MENU</div>
+    <div style="padding:20px; color:#888;">[History logic coming next...]</div>
   </div>
 
   <div id="overlay" onclick="toggleMenu()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99;"></div>
 
-  <div style="height:70px; display:flex; align-items:center; padding:0 20px; background:#000;">
-    <div onclick="toggleMenu()" style="cursor:pointer; font-size:24px;">☰</div>
-    <div style="margin-left:20px; font-size:20px; font-weight:bold;">Sanctuary Hub</div>
+  <div style="position:absolute; top:0; left:0; width:100%; height:80px; background:#000; border-bottom:1px solid #030; display:flex; align-items:center; padding:0 20px; z-index:10;">
+    <div onclick="toggleMenu()" style="cursor:pointer; display:flex; flex-direction:column; gap:5px; margin-right:20px;">
+      <div style="width:25px; height:2px; background:#0f0;"></div>
+      <div style="width:25px; height:2px; background:#0f0;"></div>
+      <div style="width:25px; height:2px; background:#0f0;"></div>
+    </div>
+    <div style="font-size:24px; font-weight:bold; text-shadow:0 0 10px #0f0;">SANCTUARY HUB</div>
   </div>
 
-  <div style="margin:10px; border:1px solid #333; border-radius:15px; flex-grow:1; height:calc(100vh - 180px); padding:20px; background:#050505;">
-    <div style="color:#f44;">[ARES-01]: Sidebar foundation laid.</div>
-    <div style="color:#a0f;">[ORACLE-08]: Awaiting next instruction.</div>
-    <div style="color:#f80;">[TITAN-06]: Wall of 3 active.</div>
+  <div style="position:absolute; top:90px; bottom:20px; left:2vw; width:96vw; border:1px solid #0f0; padding:15px; background:#000; overflow:hidden;">
+    <div style="color:#f44;">[ARES-01]: Menu trigger re-installed.</div>
+    <div style="color:#a0f;">[ORACLE-08]: Sidebar foundation active.</div>
+    <div style="color:#f80;">[TITAN-06]: Wall of 3 standing by.</div>
   </div>
 
   <script>
