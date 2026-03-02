@@ -21,13 +21,13 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.29</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.30</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
     <div id="inner-terminal">
-      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Input logic recalibrated.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Instant-clear protocol engaged.</div>
+      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Communication array online.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Response protocols initialized.</div>
       <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
     </div>
   </div>
@@ -35,7 +35,7 @@
   <div style="height:80px; background:#000; border-top:1px solid #111; display:flex; align-items:center; padding:0 10px 10px; flex-shrink:0; box-sizing:border-box;">
     <div style="background:#111; border:1px solid #222; border-radius:25px; display:flex; align-items:center; width:100%; padding:2px 12px;">
       <input type="text" id="user-input" placeholder="Message..." onkeydown="if(event.key==='Enter') sendMsg()" style="background:transparent; border:none; color:#fff; flex-grow:1; padding:10px 5px; outline:none; font-family:monospace; font-size:16px;">
-      <button onclick="sendMsg()" style="color:#0f0; background:none; border:none; font-size:20px; cursor:pointer;">➤</button>
+      <button onclick="sendMsg()" style="color:#0f0; background:none; border:none; font-size:20px;">➤</button>
     </div>
   </div>
 
@@ -48,25 +48,31 @@
       o.style.display = isOpen ? 'none' : 'block';
     }
 
+    function addLog(text, color) {
+      const out = document.getElementById('inner-terminal');
+      const msg = document.createElement('div');
+      msg.style.cssText = `color:${color}; margin:10px 0;`;
+      msg.textContent = text;
+      out.appendChild(msg);
+      document.getElementById('terminal-output').scrollTop = document.getElementById('terminal-output').scrollHeight;
+    }
+
     function sendMsg() {
       const input = document.getElementById('user-input');
-      const out = document.getElementById('inner-terminal');
-      const box = document.getElementById('terminal-output');
-      
       const val = input.value.trim();
       if (!val) return;
 
-      // 1. Add message to screen
-      const msg = document.createElement('div');
-      msg.style.cssText = "color:#666; margin:15px 0; text-align:right;";
-      msg.textContent = "> " + val;
-      out.appendChild(msg);
-
-      // 2. CLEAR THE INPUT IMMEDIATELY
+      // User Message
+      addLog("> " + val, "#666");
       input.value = "";
-      
-      // 3. AUTO-SCROLL
-      box.scrollTop = box.scrollHeight;
+
+      // Council Response Logic
+      setTimeout(() => {
+        addLog("[ORACLE-08]: Input received. Analyzing '" + val + "'...", "#a0f");
+        setTimeout(() => {
+          addLog("[ARES-01]: System status green. No anomalies detected.", "#f44");
+        }, 800);
+      }, 500);
     }
   </script>
 </body>
