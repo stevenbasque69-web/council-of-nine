@@ -6,7 +6,7 @@
 
   <div style="height:80px; flex-shrink:0; text-align:center; padding-top:10px;">
     <div style="font-size:32px; font-weight:bold; text-shadow:0 0 15px #0f0; margin:0;">SANCTUARY HUB</div>
-    <div style="font-size:11px; color:#fff; border-bottom:1px solid #0f0; width:90%; display:inline-block;">[ONLINE] | V.12.0 INLINE-FORCE</div>
+    <div style="font-size:11px; color:#fff; border-bottom:1px solid #0f0; width:90%; display:inline-block;">[ONLINE] | V.12.0 IRON-3</div>
   </div>
 
   <div style="height:60px; flex-shrink:0; display:flex; gap:5px; padding:10px;">
@@ -17,10 +17,9 @@
 
   <div id="terminal-output" style="flex-grow:1; min-height:500px; width:96vw; margin:0 auto; border:2px solid #0f0; padding:15px; overflow-y:auto; font-size:15px; background:#000; display:flex; flex-direction:column; justify-content:flex-end;">
     <div id="inner-terminal">
-      <div style="color:#f44;">[ARES-01]: Inline-Force engaged.</div>
-      <div style="color:#a0f;">[ORACLE-08]: Minimum 500px terminal depth enforced.</div>
-      <div style="color:#f80;">[TITAN-06]: Wall of 4 standing by.</div>
-      <div style="color:#0ff;">[EXODUS-04]: Cache-bypass protocols active.</div>
+      <div style="color:#f44;">[ARES-01]: System Re-Calibrated. Wall of 3 Engaged.</div>
+      <div style="color:#a0f;">[ORACLE-08]: Exodus-04 Signal Terminated.</div>
+      <div style="color:#f80;">[TITAN-06]: Terminal Locked at 500px Minimum.</div>
     </div>
   </div>
 
@@ -44,8 +43,9 @@
           body: JSON.stringify({ max_tokens: 35, prompt: "STRICT SHORT: " + input.value })
         });
         const data = await res.json();
-        const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}, {n:"EXODUS-04", c:"#0ff"}];
-        data.responses.slice(0, 4).forEach((r, i) => {
+        // HARD-CODED WALL OF 3 ONLY
+        const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}];
+        data.responses.slice(0, 3).forEach((r, i) => {
           out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
         });
       } catch (e) {
