@@ -21,21 +21,21 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.28</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.29</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
     <div id="inner-terminal">
-      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Absolute scroll-buffer active.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Native touch-response engaged.</div>
+      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Input logic recalibrated.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Instant-clear protocol engaged.</div>
       <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
     </div>
   </div>
 
   <div style="height:80px; background:#000; border-top:1px solid #111; display:flex; align-items:center; padding:0 10px 10px; flex-shrink:0; box-sizing:border-box;">
     <div style="background:#111; border:1px solid #222; border-radius:25px; display:flex; align-items:center; width:100%; padding:2px 12px;">
-      <input type="text" id="user-input" placeholder="Message..." onkeydown="if(event.key==='Enter') sendCommand()" style="background:transparent; border:none; color:#fff; flex-grow:1; padding:10px 5px; outline:none; font-family:monospace; font-size:16px;">
-      <button onclick="sendCommand()" style="color:#0f0; background:none; border:none; font-size:20px; cursor:pointer;">➤</button>
+      <input type="text" id="user-input" placeholder="Message..." onkeydown="if(event.key==='Enter') sendMsg()" style="background:transparent; border:none; color:#fff; flex-grow:1; padding:10px 5px; outline:none; font-family:monospace; font-size:16px;">
+      <button onclick="sendMsg()" style="color:#0f0; background:none; border:none; font-size:20px; cursor:pointer;">➤</button>
     </div>
   </div>
 
@@ -48,22 +48,25 @@
       o.style.display = isOpen ? 'none' : 'block';
     }
 
-    function sendCommand() {
-      const inputField = document.getElementById('user-input');
-      const terminal = document.getElementById('inner-terminal');
-      const scrollContainer = document.getElementById('terminal-output');
+    function sendMsg() {
+      const input = document.getElementById('user-input');
+      const out = document.getElementById('inner-terminal');
+      const box = document.getElementById('terminal-output');
       
-      if (inputField.value.trim() !== "") {
-        // Add your message to the screen
-        const userMsg = document.createElement('div');
-        userMsg.style.cssText = "color:#666; margin:15px 0; text-align:right; font-style:italic;";
-        userMsg.textContent = "> " + inputField.value;
-        terminal.appendChild(userMsg);
+      const val = input.value.trim();
+      if (!val) return;
 
-        // Clear input and auto-scroll
-        inputField.value = "";
-        scrollContainer.scrollTop = scrollContainer.scrollHeight;
-      }
+      // 1. Add message to screen
+      const msg = document.createElement('div');
+      msg.style.cssText = "color:#666; margin:15px 0; text-align:right;";
+      msg.textContent = "> " + val;
+      out.appendChild(msg);
+
+      // 2. CLEAR THE INPUT IMMEDIATELY
+      input.value = "";
+      
+      // 3. AUTO-SCROLL
+      box.scrollTop = box.scrollHeight;
     }
   </script>
 </body>
