@@ -6,17 +6,19 @@
   <style>
     body { background:#000; color:#0f0; font-family:monospace; margin:0; padding:0; height:100vh; display:flex; flex-direction:column; overflow:hidden; }
     #header { height:40px; border-bottom:1px solid #111; display:flex; align-items:center; padding:0 15px; font-size:12px; flex-shrink:0; background:#000; }
-    #terminal { flex-grow:1; overflow-y:auto; padding:15px; font-size:15px; -webkit-overflow-scrolling:touch; margin-bottom: 60px; }
-    #input-area { position: fixed; bottom: 5px; left: 0; right: 0; padding:10px; background:#000; display:flex; align-items:center; }
-    input { background:#111; border:1px solid #0f0; color:#fff; width:100%; padding:12px; border-radius:25px; outline:none; font-family:monospace; font-size:16px; }
+    #terminal { flex-grow:1; overflow-y:auto; padding:15px; font-size:15px; -webkit-overflow-scrolling:touch; margin-bottom: 65px; }
+    #input-area { position: fixed; bottom: 5px; left: 0; right: 0; padding:10px; background:#000; display:flex; align-items:center; gap: 10px; }
+    input { background:#111; border:1px solid #0f0; color:#fff; flex-grow:1; padding:12px; border-radius:25px; outline:none; font-family:monospace; font-size:16px; }
+    #send-btn { background:#0f0; border:none; color:#000; width:45px; height:45px; border-radius:50%; font-weight:bold; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .msg { margin-bottom:15px; line-height:1.4; }
   </style>
 </head>
 <body>
-  <div id="header">SANCTUARY V.45 | ALIGNMENT COMPLETE</div>
+  <div id="header">SANCTUARY V.46 | COMMAND UPLINK ACTIVE</div>
   <div id="terminal"><div id="log"></div></div>
   <div id="input-area">
-    <input type="text" id="user-input" placeholder="Type to the Council..." onkeydown="if(event.key==='Enter') sendMsg()">
+    <input type="text" id="user-input" placeholder="Query Oracle..." onkeydown="if(event.key==='Enter') sendMsg()">
+    <button id="send-btn" onclick="sendMsg()">➔</button>
   </div>
 
   <script src="secret.js"></script>
