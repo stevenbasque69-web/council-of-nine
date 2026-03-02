@@ -21,21 +21,21 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.31</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.34</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
     <div id="inner-terminal">
-      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Communication array online.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Response protocols recalibrated.</div>
-      <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
+      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Tactical link established. Ready for high-bandwidth data.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Direct stream active. Neural buffers cleared.</div>
+      <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by. Screen utilized.</div>
     </div>
   </div>
 
   <div style="height:80px; background:#000; border-top:1px solid #111; display:flex; align-items:center; padding:0 10px 10px; flex-shrink:0; box-sizing:border-box;">
     <div style="background:#111; border:1px solid #222; border-radius:25px; display:flex; align-items:center; width:100%; padding:2px 12px;">
       <input type="text" id="user-input" placeholder="Message..." onkeydown="if(event.key==='Enter') sendMsg()" style="background:transparent; border:none; color:#fff; flex-grow:1; padding:10px 5px; outline:none; font-family:monospace; font-size:16px;">
-      <button onclick="sendMsg()" style="color:#0f0; background:none; border:none; font-size:20px;">➤</button>
+      <button onclick="sendMsg()" style="color:#0f0; background:none; border:none; font-size:20px; cursor:pointer;">➤</button>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
     function addLog(text, color) {
       const out = document.getElementById('inner-terminal');
       const msg = document.createElement('div');
-      msg.style.cssText = `color:${color}; margin:10px 0;`;
+      msg.style.cssText = `color:${color}; margin:15px 0; line-height:1.5; white-space: pre-wrap;`;
       msg.textContent = text;
       out.appendChild(msg);
       document.getElementById('terminal-output').scrollTop = document.getElementById('terminal-output').scrollHeight;
@@ -65,20 +65,18 @@
       addLog("> " + val, "#666");
       input.value = "";
 
-      // DELAYED RESPONSES
+      // EXPANDED TECHNICAL RESPONSES
       setTimeout(() => {
-        addLog("[ORACLE-08]: Decrypting stream... Processing: " + val, "#a0f");
+        addLog("[ORACLE-08]: Data point \"" + val + "\" indexed across secondary nodes.\nConsistency check: PASS.\nNo recursive loops detected in stream.", "#a0f");
         
         setTimeout(() => {
-          addLog("[ARES-01]: Data integrity verified. No threats found.", "#f44");
+          addLog("[ARES-01]: Operational security verified for: " + val + ".\nSub-system heat: NOMINAL.\nVector trajectory remains within parameters.", "#f44");
           
           setTimeout(() => {
-            addLog("[TITAN-06]: Logic confirmed. Sanctuary remains stable.", "#f80");
-          }, 1500); // 1.5 seconds later
-          
-        }, 1200); // 1.2 seconds later
-        
-      }, 1000); // 1 second first delay
+            addLog("[TITAN-06]: The Wall of 3 confirms structural integrity.\nRequested input processed and locked into core memory.\nSanctuary remains under total user control.", "#f80");
+          }, 1500);
+        }, 1200);
+      }, 1000);
     }
   </script>
 </body>
