@@ -21,7 +21,7 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.34</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.35</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
@@ -51,7 +51,7 @@
     function addLog(text, color) {
       const out = document.getElementById('inner-terminal');
       const msg = document.createElement('div');
-      msg.style.cssText = `color:${color}; margin:15px 0; line-height:1.5; white-space: pre-wrap;`;
+      msg.style.cssText = `color:${color}; margin:18px 0; line-height:1.6; white-space: pre-wrap; border-left: 2px solid ${color}; padding-left: 10px;`;
       msg.textContent = text;
       out.appendChild(msg);
       document.getElementById('terminal-output').scrollTop = document.getElementById('terminal-output').scrollHeight;
@@ -62,20 +62,20 @@
       const val = input.value.trim();
       if (!val) return;
 
-      addLog("> " + val, "#666");
+      addLog("> USER_INPUT: " + val.toUpperCase(), "#666");
       input.value = "";
 
-      // EXPANDED TECHNICAL RESPONSES
+      // DEEP TECHNICAL RESPONSES
       setTimeout(() => {
-        addLog("[ORACLE-08]: Data point \"" + val + "\" indexed across secondary nodes.\nConsistency check: PASS.\nNo recursive loops detected in stream.", "#a0f");
+        addLog("[ORACLE-08]: Neural Mapping Sub-routine Alpha\n- Analyzing: " + val + "\n- Cross-referencing secondary nodes: OK\n- Stability check: 99.8% Accuracy\n- Buffer status: CLEAR", "#a0f");
         
         setTimeout(() => {
-          addLog("[ARES-01]: Operational security verified for: " + val + ".\nSub-system heat: NOMINAL.\nVector trajectory remains within parameters.", "#f44");
+          addLog("[ARES-01]: Tactical Integrity Shield\n- Input Source: " + val + "\n- Encryption layer: ACTIVE\n- External noise filter: ENGAGED\n- Core temperature: 34°C (NOMINAL)", "#f44");
           
           setTimeout(() => {
-            addLog("[TITAN-06]: The Wall of 3 confirms structural integrity.\nRequested input processed and locked into core memory.\nSanctuary remains under total user control.", "#f80");
-          }, 1500);
-        }, 1200);
+            addLog("[TITAN-06]: Structural Reinforcement Array\n- Wall of 3 alignment: LOCKED\n- Stream persistence: VERIFIED\n- Sanctuary Status: Under total user control\n- Command processed and archived.", "#f80");
+          }, 1800);
+        }, 1400);
       }, 1000);
     }
   </script>
