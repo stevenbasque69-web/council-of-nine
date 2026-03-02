@@ -4,8 +4,18 @@
 </head>
 <body style="background:#000; color:#0f0; font-family:monospace; margin:0; padding:0; width:100vw; height:100vh; display:flex; flex-direction:column; overflow:auto;">
 
-  <div id="side-menu" style="position:fixed; top:0; left:-300px; width:280px; height:100%; background:#080808; border-right:1px solid #111; transition:0.3s; z-index:100;">
-    <div style="padding:20px; color:#0f0; border-bottom:1px solid #111; font-weight:bold;">SANCTUARY MENU</div>
+  <div id="side-menu" style="position:fixed; top:0; left:-300px; width:280px; height:100%; background:#080808; border-right:1px solid #111; transition:0.3s; z-index:100; display:flex; flex-direction:column;">
+    <div style="padding:25px 15px 10px;">
+      <div style="background:#111; border:1px solid #222; border-radius:20px; padding:10px 15px; color:#555; font-size:14px;">🔍 Search chats</div>
+    </div>
+    
+    <div style="padding:10px 15px;">
+      <div onclick="location.reload()" style="background:#111; border:1px solid #0f0; border-radius:10px; padding:12px; color:#0f0; text-align:center; cursor:pointer; font-weight:bold;">+ New Chat</div>
+    </div>
+
+    <div style="flex-grow:1; padding:20px; color:#333; font-size:12px; letter-spacing:1px;">RECENT HISTORY PENDING...</div>
+    
+    <div style="padding:20px; border-top:1px solid #111; color:#0f0; font-size:14px;">⚙️ Settings</div>
   </div>
 
   <div id="overlay" onclick="toggleMenu()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99;"></div>
@@ -16,16 +26,15 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-size:16px; font-weight:bold; color:#0f0;">SANCTUARY V.23</div>
+    <div style="margin-left:15px; font-size:16px; font-weight:bold; color:#0f0;">SANCTUARY V.24</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:15px; background:#000;">
     <div id="inner-terminal">
-      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Height compressed for visibility.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Native scrolling/zoom re-engaged.</div>
+      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Sidebar functionality expanding.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Reset protocols loaded.</div>
       <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
     </div>
-    <div style="height:50px;"></div>
   </div>
 
   <div style="height:80px; background:#000; border-top:1px solid #111; display:flex; align-items:center; padding:0 10px 10px 10px; flex-shrink:0; box-sizing:border-box;">
