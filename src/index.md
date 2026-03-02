@@ -21,13 +21,13 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.30</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.31</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
     <div id="inner-terminal">
       <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Communication array online.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Response protocols initialized.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Response protocols recalibrated.</div>
       <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
     </div>
   </div>
@@ -62,17 +62,23 @@
       const val = input.value.trim();
       if (!val) return;
 
-      // User Message
       addLog("> " + val, "#666");
       input.value = "";
 
-      // Council Response Logic
+      // DELAYED RESPONSES
       setTimeout(() => {
-        addLog("[ORACLE-08]: Input received. Analyzing '" + val + "'...", "#a0f");
+        addLog("[ORACLE-08]: Decrypting stream... Processing: " + val, "#a0f");
+        
         setTimeout(() => {
-          addLog("[ARES-01]: System status green. No anomalies detected.", "#f44");
-        }, 800);
-      }, 500);
+          addLog("[ARES-01]: Data integrity verified. No threats found.", "#f44");
+          
+          setTimeout(() => {
+            addLog("[TITAN-06]: Logic confirmed. Sanctuary remains stable.", "#f80");
+          }, 1500); // 1.5 seconds later
+          
+        }, 1200); // 1.2 seconds later
+        
+      }, 1000); // 1 second first delay
     }
   </script>
 </body>
