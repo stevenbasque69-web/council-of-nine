@@ -21,14 +21,14 @@
       <div style="width:18px; height:2px; background:#0f0;"></div>
       <div style="width:18px; height:2px; background:#0f0;"></div>
     </div>
-    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.35</div>
+    <div style="margin-left:15px; font-weight:bold;">SANCTUARY V.36</div>
   </div>
 
   <div id="terminal-output" style="flex-grow:1; overflow-y:auto; padding:15px; -webkit-overflow-scrolling:touch;">
     <div id="inner-terminal">
-      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Tactical link established. Ready for high-bandwidth data.</div>
-      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Direct stream active. Neural buffers cleared.</div>
-      <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by. Screen utilized.</div>
+      <div style="color:#f44; margin-bottom:10px;">[ARES-01]: Tactical link established. Ready.</div>
+      <div style="color:#a0f; margin-bottom:10px;">[ORACLE-08]: Direct stream active. Buffers clear.</div>
+      <div style="color:#f80; margin-bottom:10px;">[TITAN-06]: Wall of 3 standing by.</div>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
     function addLog(text, color) {
       const out = document.getElementById('inner-terminal');
       const msg = document.createElement('div');
-      msg.style.cssText = `color:${color}; margin:18px 0; line-height:1.6; white-space: pre-wrap; border-left: 2px solid ${color}; padding-left: 10px;`;
+      msg.style.cssText = `color:${color}; margin:20px 0; line-height:1.6; white-space: pre-wrap; border-left: 2px solid ${color}; padding-left: 12px; font-size:14px;`;
       msg.textContent = text;
       out.appendChild(msg);
       document.getElementById('terminal-output').scrollTop = document.getElementById('terminal-output').scrollHeight;
@@ -62,18 +62,18 @@
       const val = input.value.trim();
       if (!val) return;
 
-      addLog("> USER_INPUT: " + val.toUpperCase(), "#666");
+      addLog("> USER_COMMAND: " + val.toUpperCase(), "#666");
       input.value = "";
 
-      // DEEP TECHNICAL RESPONSES
+      // MAXIMUM DATA DENSITY RESPONSES
       setTimeout(() => {
-        addLog("[ORACLE-08]: Neural Mapping Sub-routine Alpha\n- Analyzing: " + val + "\n- Cross-referencing secondary nodes: OK\n- Stability check: 99.8% Accuracy\n- Buffer status: CLEAR", "#a0f");
+        addLog("[ORACLE-08]: Neural Mapping Sub-routine Alpha\n- Analyzing: " + val + "\n- Cross-referencing secondary nodes: OK\n- Pattern Density: HIGH\n- Packet Latency: 0.02ms\n- Integrity: 100% Verified\n- Buffer Status: OPTIMAL", "#a0f");
         
         setTimeout(() => {
-          addLog("[ARES-01]: Tactical Integrity Shield\n- Input Source: " + val + "\n- Encryption layer: ACTIVE\n- External noise filter: ENGAGED\n- Core temperature: 34°C (NOMINAL)", "#f44");
+          addLog("[ARES-01]: Tactical Integrity Shield & Defense\n- Input Stream: " + val + "\n- Firewall Layer: ACTIVE\n- Signal Noise: FILTERED\n- Core Temp: 34°C\n- Memory Allocation: STABLE\n- Perimeter: SECURE", "#f44");
           
           setTimeout(() => {
-            addLog("[TITAN-06]: Structural Reinforcement Array\n- Wall of 3 alignment: LOCKED\n- Stream persistence: VERIFIED\n- Sanctuary Status: Under total user control\n- Command processed and archived.", "#f80");
+            addLog("[TITAN-06]: Structural Reinforcement Array\n- Wall of 3 Alignment: LOCKED\n- Stream Persistence: VERIFIED\n- Archiving Command: SUCCESS\n- System Load: 4% Capacity\n- Sanctuary Status: Under total user control\n- Ready for next input cycle.", "#f80");
           }, 1800);
         }, 1400);
       }, 1000);
