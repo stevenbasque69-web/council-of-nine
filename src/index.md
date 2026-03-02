@@ -4,36 +4,32 @@
 </head>
 <style>
   * { box-sizing: border-box; }
-  body { 
+  html, body { 
     background: #000; color: #0f0; font-family: monospace; 
-    margin: 0; padding: 0; width: 100vw; height: 100vh;
+    margin: 0; padding: 0; width: 100%; height: 100vh;
     display: flex; flex-direction: column; overflow: hidden;
   }
   
-  /* 1. Header (Fixed 90px) */
-  .header-ui { height: 90px; flex-shrink: 0; text-align: center; padding-top: 10px; }
-  .big-header { font-size: 32px; font-weight: bold; text-shadow: 0 0 15px #0f0; margin: 0; }
+  header { height: 80px; flex-shrink: 0; text-align: center; padding-top: 10px; }
+  .big-header { font-size: 32px; font-weight: bold; text-shadow: 0 0 15px #0f0; }
   .status-line { font-size: 11px; color: #fff; border-bottom: 1px solid #0f0; width: 90%; display: inline-block; }
   
-  /* 2. Nav (Fixed 60px) */
-  .nav-ui { height: 60px; flex-shrink: 0; display: flex; gap: 5px; padding: 10px; }
-  .nav-ui a { 
+  nav { height: 60px; flex-shrink: 0; display: flex; gap: 5px; padding: 10px; }
+  nav a { 
     flex: 1; border: 1px solid #0f0; color: #0f0; text-decoration: none;
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; background: rgba(0,255,0,0.1);
   }
   
-  /* 3. THE TERMINAL (Mathematical Fill) */
-  /* Calculation: 100vh - (Header 90 + Nav 60 + Input 80) = Full Screen Fill */
+  /* THE TERMINAL - FORCED EXPANSION */
   #terminal-output { 
-    height: calc(100vh - 230px); 
+    flex: 1 0 65%; /* FORCES terminal to take at least 65% of screen */
     width: 96vw; margin: 0 auto; border: 2px solid #0f0;
     padding: 15px; overflow-y: auto; font-size: 15px; background: #000;
     display: flex; flex-direction: column; justify-content: flex-end;
   }
   
-  /* 4. Input (Fixed 80px) */
-  .input-ui { height: 80px; flex-shrink: 0; display: flex; padding: 15px; gap: 5px; }
+  footer { height: 80px; flex-shrink: 0; display: flex; padding: 15px; gap: 5px; }
   input { 
     background: #000; border: 1px solid #0f0; color: #0f0; 
     flex-grow: 1; padding: 0 15px; font-family: monospace; 
@@ -44,29 +40,29 @@
   .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; }
 </style>
 
-<div class="header-ui">
+<header>
   <div class="big-header">SANCTUARY HUB</div>
-  <div class="status-line">[ONLINE] | <span id="clock"></span> | [V.10.0 TOTAL-FILL]</div>
-</div>
+  <div class="status-line">[ONLINE] | <span id="clock"></span> | [V.11.0F IRON-FLEX]</div>
+</header>
 
-<div class="nav-ui">
+<nav>
   <a href="/council/">COUNCIL</a>
   <a href="/files/">FILES</a>
   <a href="/settings/">SETTINGS</a>
-</div>
+</nav>
 
 <div id="terminal-output">
   <div id="inner-terminal">
-    <div class="ARES">[ARES-01]: Mathematical anchoring engaged.</div>
-    <div class="ORACLE">[ORACLE-08]: Calc(100vh) protocol forcing terminal expansion.</div>
-    <div class="TITAN">[TITAN-06]: Wall of 3 standing by.</div>
+    <div class="ARES">[ARES-01]: Flex-priority override active.</div>
+    <div class="ORACLE">[ORACLE-08]: Terminal box locked to 65% minimum screen depth.</div>
+    <div class="TITAN">[TITAN-06]: Wall of 4 Protocol: Awaiting Command.</div>
   </div>
 </div>
 
-<div class="input-ui">
+<footer>
   <input type="text" id="user-input" placeholder="Execute..." autocomplete="off">
   <button onclick="sendCommand()">SEND</button>
-</div>
+</footer>
 
 <script>
   function updateClock() {
@@ -89,8 +85,8 @@
         body: JSON.stringify({ max_tokens: 35, prompt: "STRICT SHORT: " + input.value })
       });
       const data = await res.json();
-      const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}];
-      data.responses.slice(0, 3).forEach((r, i) => {
+      const members = [{n:"ARES-01", c:"#f44"}, {n:"ORACLE-08", c:"#a0f"}, {n:"TITAN-06", c:"#f80"}, {n:"EXODUS-04", c:"#0ff"}];
+      data.responses.slice(0, 4).forEach((r, i) => {
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
