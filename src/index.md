@@ -9,42 +9,42 @@
     display: flex; flex-direction: column; overflow: hidden;
   }
   
-  /* 1. Header - Scaled to screen height */
-  header { height: 12vh; display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; }
-  .big-header { font-size: 7vw; font-weight: bold; text-shadow: 0 0 15px #0f0; margin: 0; }
-  .status-line { font-size: 11px; color: #fff; border-bottom: 1px solid #0f0; margin: 5px 10px; padding-bottom: 2px; }
+  /* 1. Header - Compact & Bright */
+  header { height: 10vh; display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; }
+  .big-header { font-size: 30px; font-weight: bold; text-shadow: 0 0 15px #0f0; margin: 0; }
+  .status-line { font-size: 11px; color: #fff; border-bottom: 1px solid #0f0; margin: 2px 10px; }
   
-  /* 2. Navigation - Scaled to screen height */
-  nav { height: 8vh; display: flex; gap: 2px; padding: 0 5px; flex-shrink: 0; }
+  /* 2. Navigation - Thick & Tap-Friendly */
+  nav { height: 7vh; display: flex; gap: 5px; padding: 5px; flex-shrink: 0; }
   nav a { 
-    color: #0f0; text-decoration: none; font-size: 11px; 
+    color: #0f0; text-decoration: none; font-size: 12px; 
     border: 1px solid #0f0; flex: 1; display: flex; 
-    align-items: center; justify-content: center; background: #000;
+    align-items: center; justify-content: center; background: rgba(0, 255, 0, 0.1);
   }
   
-  /* 3. The Terminal - DYNAMIC FILL */
+  /* 3. The Terminal - MAXIMUM HEIGHT */
   #terminal-output { 
-    flex-grow: 1; /* Automatically takes all remaining space */
-    width: 96vw; margin: 5px auto; border: 2px solid #0f0;
-    padding: 10px; overflow-y: auto; font-size: 14px;
-    background: rgba(0, 20, 0, 0.2);
+    flex-grow: 1; /* Pushes input to the bottom */
+    width: 98vw; margin: 10px auto; border: 2px solid #0f0;
+    padding: 15px; overflow-y: auto; font-size: 15px;
+    background: #000; line-height: 1.4;
   }
   
-  /* 4. Input - Bottom Lock */
-  .input-area { height: 10vh; display: flex; padding: 5px; gap: 5px; flex-shrink: 0; }
+  /* 4. Input - Locked to Bottom */
+  .input-area { height: 10vh; display: flex; padding: 10px; gap: 5px; flex-shrink: 0; background: #000; }
   input { 
     background: #000; border: 1px solid #0f0; color: #0f0; 
     flex-grow: 1; padding: 0 15px; font-family: monospace; 
     font-size: 16px; outline: none; border-radius: 0;
   }
-  button { background: #0f0; color: #000; border: none; padding: 0 20px; font-weight: bold; }
+  button { background: #0f0; color: #000; border: none; padding: 0 25px; font-weight: bold; }
 
   .ARES { color: #f44; } .ORACLE { color: #a0f; } .TITAN { color: #f80; }
 </style>
 
 <header>
   <div class="big-header">SANCTUARY HUB</div>
-  <div class="status-line">[ONLINE] | <span id="clock"></span> | [V.6.0 AUTO-FIT]</div>
+  <div class="status-line">[ONLINE] | <span id="clock"></span> | [V.6.1 DOMINANCE]</div>
 </header>
 
 <nav>
@@ -54,12 +54,12 @@
 </nav>
 
 <div id="terminal-output">
-  <div class="ARES">[ARES-01]: Responsive scaling engaged. No overlap detected.</div>
-  <div class="ORACLE">[ORACLE-08]: Wall of 3 logic verified. Interface wide.</div>
+  <div class="ARES">[ARES-01]: Priority shifted to terminal dominance.</div>
+  <div class="TITAN">[TITAN-06]: Wall of 3 standing by for input.</div>
 </div>
 
 <div class="input-area">
-  <input type="text" id="user-input" placeholder="Execute Command..." autocomplete="off">
+  <input type="text" id="user-input" placeholder="Execute..." autocomplete="off">
   <button onclick="sendCommand()">SEND</button>
 </div>
 
@@ -88,7 +88,7 @@
         out.innerHTML += `<div style="color:${members[i].c}">[${members[i].n}]: ${r}</div>`;
       });
     } catch (e) {
-      out.innerHTML += `<div style="color:red">[ERR]: Connection Timed Out.</div>`;
+      out.innerHTML += `<div style="color:red">[ERR]: Connection Lost.</div>`;
     }
     input.value = "";
     out.scrollTop = out.scrollHeight;
